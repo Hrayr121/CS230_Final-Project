@@ -26,7 +26,6 @@ public class ProductsPage extends BasePage {
 
     public boolean isProperURL(){
        return driver.getCurrentUrl().equals("https://automationexercise.com/products");
-       //or in the test method  Assert.assertEquals(currentUrl, "url" );????
     }
 }
 

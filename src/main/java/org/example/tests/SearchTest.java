@@ -20,7 +20,7 @@ public class SearchTest extends BaseTest {
 
         //assertion for checking if the SEARCHED PRODUCTS is visible and displayed(class = title text-center)
 
-        //tanem arandzin tegh????
+
         boolean isSearchedDisplayed = searchPage.isSearchedProductsDisplayed();
         Assert.assertTrue(isSearchedDisplayed);
     }
