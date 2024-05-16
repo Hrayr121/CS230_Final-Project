@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import org.example.infra.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,20 +22,20 @@ public class SearchPage extends BasePage {
 //    }
 
     public void search(String keyword) {
-        WebElement searchBox = driver.findElement(searchBoxLocator); //stegh mna te tanem dus???
+        WebElement searchBox =  WebDriverManager.getDriver().findElement(searchBoxLocator); //stegh mna te tanem dus???
         searchBox.sendKeys(keyword);
 
-        WebElement searchButton = driver.findElement(searchButtonLocator);
+        WebElement searchButton =  WebDriverManager.getDriver().findElement(searchButtonLocator);
         searchButton.click();
     }
 
     public int getSearchResultsCount() {
-        List<WebElement> searchResults = driver.findElements(searchResultsLocator);
+        List<WebElement> searchResults =  WebDriverManager.getDriver().findElements(searchResultsLocator);
         return searchResults.size();
     }
 
     public boolean isSearchedProductsDisplayed(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait( WebDriverManager.getDriver(), Duration.ofSeconds(5));
         WebElement searchedProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(searchedProductsLocator));
 
         return searchedProducts.isDisplayed();

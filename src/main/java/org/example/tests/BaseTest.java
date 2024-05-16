@@ -13,7 +13,8 @@ public class BaseTest {
 
     @Before
     public void setUp() {
-        driver = WebDriverManager.createDriver();
+        WebDriverManager.createDriver();
+        driver = WebDriverManager.getDriver();
     }
 
     @After

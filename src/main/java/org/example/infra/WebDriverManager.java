@@ -6,11 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WebDriverManager {
     private static WebDriver driver;
 
-    public static WebDriver createDriver() {
+    public static void createDriver() {
         if (driver == null) {
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\hrayr\\IdeaProjects\\chromedriver-win64\\chromedriver-win64");
             driver = new ChromeDriver();
         }
+
+    }
+
+    public static WebDriver getDriver(){
         return driver;
     }
 
